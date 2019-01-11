@@ -39,6 +39,7 @@ Variable কে string এর সাথে concatenate করে দেখাত
 var myName = 'Manzur';
 var myAge = 100;
 console.log("My name is", myName, "and my age is", myAge, "years.");
+```
 
 ## বিগিনিং জাভাস্ক্রিপ্ট, পর্ব ৩ - কম্পিউটারে অংক কষা (এরিথমেটিক অপারেটরস)
 
@@ -105,7 +106,11 @@ Output: 3 2
 ### পর্ব ৫ - লুপ
 
 **৫.১ while loop**
-জাভাস্ক্রিপ্টে ৩ ভাবে লুপ লেখা যায়, do while, while, এবং, for ব্যবহার করে
+
+জাভাস্ক্রিপ্টে ৩ ভাবে লুপ লেখা যায়,
+1. do while,
+2. while, এবং,
+3. for ব্যবহার করে
 
 ```js
 var counter = 10;
@@ -125,7 +130,7 @@ while (i < 20)
 }
 ```
 
-counter এর নাম নির্দিষ্ট ভ্যালু তে পৌঁছালে break; ব্যবহার করে while থেকে বের হয়ে আসা যায়।
+counter এর নাম নির্দিষ্ট ভ্যালু তে পৌঁছালে break ব্যবহার করে while লুপ থেকে বের হয়ে আসা যায়।
 
 ## বিগিনিং জাভাস্ক্রিপ্ট, পর্ব ৫.৩ - do while লুপ এবং break
 ```
