@@ -8,7 +8,7 @@ var myName = "Earth"
 
 এক লাইনে একাধিক ভ্যারিয়েবল ডিক্লেয়ার করা
 
-```
+```js
 var a = 12, b = 13, c = 14;
 ```
 
@@ -18,24 +18,24 @@ var a = 12, b = 13, c = 14;
 
 ভ্যারিয়েবলের অর্থবহ নাম দিতে হয়। যেমনঃ
 
-```
+```js
 var n = 123;
 ```
 না লিখে
-```
+```js
 var totalBiscuits = 123;
 ```
 লিখলে আমার কোড দেখলে আরেকজন বুঝতে পারবে, এই ভ্যারিয়েবলের মধ্যে আসলে কিসের মান রাখা হচ্ছে।
 
 ভ্যারিয়েবলের নামকরণের ক্ষেত্রে camelCase ব্যবহার করা একটা স্বীকৃত স্ট্যান্ডার্ড।
 
-```
+```js
 var myVariableNameIsBig = 0;
 ```
 
 Variable কে string এর সাথে concatenate করে দেখাতে চাইলে নিচের মত করে লিখতে হবেঃ
 
-```
+```js
 var myName = 'Manzur';
 var myAge = 100;
 console.log("My name is", myName, "and my age is", myAge, "years.");
@@ -43,7 +43,7 @@ console.log("My name is", myName, "and my age is", myAge, "years.");
 
 ## বিগিনিং জাভাস্ক্রিপ্ট, পর্ব ৩ - কম্পিউটারে অংক কষা (এরিথমেটিক অপারেটরস)
 
-```
+```js
 var totalEggs = 12;
 var priceEgg = 4;
 var totalEggPrice = totalEggs * priceEgg;
@@ -51,7 +51,7 @@ console.log("Total price of eggs is", totalEggPrice, "taka");
 ```
 
 ## বিগিনিং জাভাস্ক্রিপ্ট, পর্ব ৩.৫ - অপারেটর নিয়ে আরও কিছু জানার আছে (ঐচ্ছিক পর্ব)
-```
+```js
 var x;
 var y = 4;
 
@@ -62,7 +62,7 @@ Output: x =  4 y =  5
 ```
 কারণ হল, x এর মান undefined। x = y++; লাইনে প্রথম y এর মান x এ অ্যাসাইন হচ্ছে। তারপরে y এর মান ১ বাড়ছে।
 
-```
+```js
 var x;
 var y = 4;
 x = --y;
@@ -72,21 +72,21 @@ Output: 3 3
 
 ## ডাটা টাইপ
 
-```
-string
-number
-boolean
-undefined
-null
-```
+1. string
+2. number
+3. boolean
+4. undefined
+5. null
 
 যখন কোন ভ্যারিয়েবল ডিক্লেয়ার করা হয়েছে, কিন্তু, ভ্যালু এ্যাসাইন করা হয়নি। তখন এই ইরর দেখাবে।
+```
 null
 symbol (ES6)
-
+```
 কোন ভ্যারিয়েবলের ডাটা টাইপ জানতে ব্যবহার করতে হবে **typeof**.
-
+```js
 console.log( typeof(myName) );
+```
 
 ### কনস্ট্যান্ট
 
@@ -133,7 +133,7 @@ while (i < 20)
 counter এর নাম নির্দিষ্ট ভ্যালু তে পৌঁছালে break ব্যবহার করে while লুপ থেকে বের হয়ে আসা যায়।
 
 ## বিগিনিং জাভাস্ক্রিপ্ট, পর্ব ৫.৩ - do while লুপ এবং break
-```
+```js
 var i =0;
 do {
 	i++;
@@ -152,7 +152,7 @@ do {
 ```
 
 ## বিগিনিং জাভাস্ক্রিপ্ট, পর্ব ৫.৪ - for loop, কন্ডিশন, স্টেপিং এবং ব্রেক
-```
+```js
 var i = 0;
 for(i; i < 20; i++) {
 	console.log(i);
@@ -165,7 +165,7 @@ for(i; i < 20; i += 2) {
 
 ## বিগিনিং জাভাস্ক্রিপ্ট, পর্ব ৫.৫ - ফর লুপে মাল্টিপল স্টেটমেন্ট এবং স্টেপিং
 
-```
+```js
 var i,j;
 
 for(i = 0, j = 10; i <= 10; i++, j--) {
