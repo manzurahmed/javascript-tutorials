@@ -120,3 +120,9 @@ var list3 = [
 var final = list1.concat(list2, list3);
 console.log(final);
 ```
+
+শর্টকাট হিসাবে নীচের মত করে এ্যারে concat করা যায়ঃ
+
+```js
+var final = [].concat(list1, list2, list3);
+```
