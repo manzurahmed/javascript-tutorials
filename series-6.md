@@ -95,3 +95,28 @@ var list2 = Array.from(list);
 list[1] = "No day";
 console.log(list, list2);
 ```
+
+## ৬.৭ একটা এ্যারের সাথে আরেকটা এ্যারে যোগ করা (Merge)
+
+একটা এ্যারের সাথে আরেকটা এ্যারে merge করে নতুন আরেকটা এ্যারে বানাতে .concat ফাংশন ব্যবহার করা হয়।
+
+```js
+var list1 = [
+	"sun",
+	"mon",
+	"tue",
+];
+
+var list2 = [
+	"wed",
+	"thu",
+];
+
+var list3 = [
+	"fri",
+	"sat",
+];
+
+var final = list1.concat(list2, list3);
+console.log(final);
+```
