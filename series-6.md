@@ -126,3 +126,32 @@ console.log(final);
 ```js
 var final = [].concat(list1, list2, list3);
 ```
+
+## ৬.৮ অ্যারে ট্র্যাভার্সিং (লুপ চালিয়ে অ্যারের এলিমেন্টগুলো অ্যাক্সেস করা)
+
+```js
+var list = [
+	"sun",
+	"mon",
+	"tue",
+	"wed",
+	"thu",
+	"fri",
+	"sat",
+];
+
+var length = list.length; // find total element once
+for(var i = 0; i < length; i++) {
+	console.log("Element at ", i, "offset is", list[i]);
+}
+console.log(final);
+```
+
+এছাড়াও, আর এক ভাবে অ্যারে'তে লুপ চালানো যায়ঃ
+
+```js
+for(i in list) {
+	console.log("Element at ", i, "offset is", list[i]);
+}
+console.log(final);
+```
