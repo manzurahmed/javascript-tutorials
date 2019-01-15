@@ -155,3 +155,40 @@ for(i in list) {
 }
 console.log(final);
 ```
+
+## ৬.৯ অ্যারে থেকে empty এলিমেন্ট বাদ দেয়া
+
+```js
+var list = [
+    "sun",
+    NaN,
+    "mon",
+    "",
+    null,
+    "tue",
+    "wed",
+    ,
+    ,
+    "thu",
+    undefined,
+    "fri",
+    null,
+    "sat"
+];
+
+//console.log(list);
+
+// long way
+/*
+var newList = [];
+for(i in list) {
+    if(list[i]) {
+        newList.push(list[i]);
+    }
+}
+*/
+
+// One-liner way
+newList = list.filter(Boolean);
+console.log(newList);
+```
