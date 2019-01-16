@@ -245,3 +245,29 @@ for(var i = 0; i < length; i++) {
 console.log(numberList);
 // Output: [ 1, 2, 9, 11, 19, 24, 26, 29, 77, 78, 82 ]
 ```
+
+## 6.11 স্ট্রিং থেকে অ্যারে এবং অ্যারে থেকে স্ট্রিং
+
+string কে এ্যারেতে রূপান্তরের জন্য split(delimiter) ফাংশন ব্যবহার করা হয়।
+
+```js
+var s = "lorem ipsum dolor sit amet";
+var arr = s.split(" ");
+
+console.log(arr);
+```
+
+এবার এ্যারেকে আবার স্ট্রিং এ কনভার্ট করা হবে join(delimiter) ফাংশন ব্যবহার করে।
+
+```js
+var ns = arr.join(" ");
+console.log(ns);
+```
+
+এ্যারের split(), reverse() ও join() ফাংশন দিয়ে কোন স্ট্রিংকে উলটো করে লেখা।
+
+```js
+var name = "Manzur Ahmed";
+var rev = name.split("").reverse().join("");
+console.log(rev);
+```
