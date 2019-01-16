@@ -192,3 +192,56 @@ for(i in list) {
 newList = list.filter(Boolean);
 console.log(newList);
 ```
+
+## 6.10 সর্টিং, অ্যারের ভেতরের সবকিছুকে ক্রমানুসারে সাজানো
+
+এ্যারের string এলিমেন্ট সর্টিং এ কোন অসুবিধা নাই। কোন এ্যারের উপরে sort() ফাংশন দিয়ে সর্টিং করলে ফাংশনটী সব এলিমেন্টকে string data type হিসাব করে সর্টিং করে।
+
+```js
+var list = [
+    "sun",
+    "mon",
+    "tue",
+    "wed",
+    "thu",
+    "fri",
+    "sat",
+];
+```
+
+ফলে, number data type এলিমেন্টযুক্ত এ্যারের উপরে sort() ফাংশন সঠিকভাবে সর্টিং করতে পারে না।
+
+```js
+list.sort();
+console.log(list);
+// Output: [ 'fri', 'mon', 'sat', 'sun', 'thu', 'tue', 'wed' ]
+
+var numberList = [
+    11, 1, 19, 9, 82, 2, 29, 77, 78, 24, 26
+];
+numberList.sort();
+console.log(numberList);
+// Output: [ 1, 11, 19, 2, 24, 26, 29, 77, 78, 82, 9 ]
+```
+
+সর্টিং এর জন্য লুপ ব্যবহার করা হবে
+
+```js
+var length = numberList.length - 1;
+
+for(var i = 0; i < length; i++) {
+    for( var j = 0; j < length; j++) {
+        if(numberList[j] > numberList[j+1]) {
+            // swap value of two variables
+            // var a = 1, b = 3;
+            // var c = a;
+            // b = c;
+            // Shortcut in ES6
+            // [a,b] = [b,a];
+            [ numberList[j], numberList[j+1] ] = [ numberList[j+1], numberList[j] ];
+        }
+    }
+}
+console.log(numberList);
+// Output: [ 1, 2, 9, 11, 19, 24, 26, 29, 77, 78, 82 ]
+```
