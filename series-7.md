@@ -40,3 +40,24 @@ true
 false
 ```
 
+## 7.1 ফাংশনে কোন প্যারামিটারের ডিফল্ট ভ্যালু
+
+ES6 এ ফাংশনের প্যারামিটারের ডিফল্ট ভ্যালু পাস করা যায়।
+
+```js
+function sayHi(name = "Anonymous") {
+    console.log("Hello " + name);
+}
+
+sayHi("Manzur");
+sayHi();
+sayHi();
+
+/*
+Output:
+Hello Manzur
+Hello Anonymous
+Hello Anonymous
+*/
+```
+
