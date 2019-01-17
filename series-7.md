@@ -33,5 +33,10 @@ function isEven(number) {
 console.log(isEven(12));
 console.log(isEven(14));
 console.log(isEven(29));
+
+// Output:
+true
+true
+false
 ```
 
