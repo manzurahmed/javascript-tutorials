@@ -272,7 +272,7 @@ var rev = name.split("").reverse().join("");
 console.log(rev);
 ```
 
-// ## 6.12 স্ট্রিং এবং অ্যারে নিয়ে আরও একটু
+## 6.12 স্ট্রিং এবং অ্যারে নিয়ে আরও একটু
 
 ```js
 var s = "the quick brown fox jumps over the lazy dog";
