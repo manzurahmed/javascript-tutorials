@@ -271,3 +271,16 @@ var name = "Manzur Ahmed";
 var rev = name.split("").reverse().join("");
 console.log(rev);
 ```
+
+// ## 6.12 স্ট্রিং এবং অ্যারে নিয়ে আরও একটু
+
+var s = "the quick brown fox jumps over the lazy dog";
+// To find word count
+var a = s.split(" ");
+console.log(a.length);
+// To find character count
+var c = s.split("");
+console.log(c.length);
+// To find total "o" character occurrences
+var o = s.split();
+console.log(o.length - 1);
