@@ -61,3 +61,23 @@ Hello Anonymous
 */
 ```
 
+## 7.2 রিইউজেবল ফাংশন - স্ট্রিং রিভার্স
+
+এবার একটি ফাংশন তৈরী করা হয়েছে যেটি একটি string প্যারামিটার হিসাবে গ্রহন করে সেটিকে উল্টিয়ে দেখাবে।
+```js
+function reverseString(data) {
+    var rs = data.split("").reverse().join("");
+
+    return rs;
+}
+
+var s1 = "Hello World!";
+var s2 = "Manzur Ahmed";
+var reversed1 = reverseString(s1);
+var reversed2 = reverseString(s2);
+console.log(reversed1, reversed2);
+```
+!dlroW olleH demhA ruznaM
+```js
+
+```
