@@ -140,3 +140,85 @@ console.log(students.length);
 
 আর্গুমেন্ট হলঃ ঐ ফাংশনকে যখন কল করা হয়, তখন ঐ ফাংশনের ভ্যারিয়েবল বা ভ্যারিয়েবল্গুলোর মান পাস করা হয়। এই মান বা মানগুলোকে আর্গুমেন্ট বলে।
 
+## 7.5 জাভাস্ক্রিপ্ট ফাংশনে ভ্যারিয়েবল স্কোপ
+
+কোন ভ্যারিয়েবলের মান কোন ক্ষেত্রে কি রকম থাকবে, বা, যেখান ব্যবহার করা হচ্চ্যে, তা আসলেই ব্যবহার করা যাবে কিনা, "scope" এর মাধ্যামে সেটা বোঝা যায়।
+
+### অতীব জরুরী
+Global scope এ ডিক্লেয়ার করা একটি ভ্যারিয়েবলকে ফাংশনের ভিতর থেকে ঐ একই নামে পরিবর্তন করলে গ্লোবাল ভ্যারিয়েবলের মান পরিবর্তন হয়ে যাবে।
+
+```js
+var i = 12;
+
+// Changing the value of the variable inside this function with same name
+function doSomething(){
+    i = 10;
+    console.log("Inside function. Changing Global scope:", i);
+}
+
+// Call function where i = 10
+doSomething();
+// Now call the global variable.
+// Value of "i" is now 10,
+```
+
+কিন্তু, doSomething ফাংশনের মধ্যে যদি নতুন করে i নামের ভ্যারিয়েবলকে ডিক্লেয়ার করা হত, তবে Global scope এর i এর মান অপরিবর্তিত থাকত।
+
+```js
+function doSomethingElse(){
+    var i = 37;
+    console.log("Inside function. Changing Local scope:", i);
+}
+doSomethingElse();
+```
+
+### Variable Hoising
+
+ফাংশনের মধ্যে যেখানেই ভ্যারিয়েবল ডিক্লেয়ার করা হোক না কেন, স্ক্রিপ্ট রান করার সময় জাভাস্ক্রিপ্ট ভ্যারিয়েবলগুলোকে উপরে নিয়ে আসে। এই প্রক্রিয়াকে Variable Hoisting বলে।
+
+```js
+function doVariableHoisting(){
+    i = 29;
+    console.log("Inside function. Variable hoisting:", i);
+    // During runtime, variable i will be moved to the top
+    // acting as local variable.
+    var i;
+}
+doVariableHoisting();
+```
+
+### let এর ব্যবহার
+
+নীচের দুইটা উদাহরণের মাধ্যমে var এবং let এর পার্থক্য বুঝতে পারা যায়।
+
+```js
+// Using "var"
+console.log("---");
+function doInsideVar(){
+    var i = 37;
+
+    if(true) {
+        var i = 76;
+        console.log("Inside if with var. ", i);
+    }
+    console.log("Inside function. Changing Local scope:", i);
+}
+doInsideVar();
+
+// Using "let"
+console.log("---");
+function doInsideLet(){
+    let i = 37;
+
+    if(true) {
+        let i = 76;
+        console.log("Inside if with var. ", i);
+    }
+    console.log("Inside function. Changing Local scope:", i);
+}
+doInsideLet();
+```
+
+তাহলে, doInsideVar() এবং doInsideLet() ফাংশন দু'টির মাধ্যমে var এবং let ব্যবহারে ভ্যারিয়েবলের মান'কে কিভাবে প্রভাবিত করে, তা বুঝতে পারা গেল।
+
+**মনে রাখা প্রয়োজন যে**, **let** এর স্কোপ হল, যে কোন ব্লকের মধ্যে local।
