@@ -81,3 +81,55 @@ console.log(reversed1, reversed2);
 ```js
 
 ```
+
+## 7.3 ফাংশনে আনলিমিটেড আর্গুমেন্ট নেয়া - স্প্রেড অপারেটর
+
+ভ্যারিয়েবল সংখ্যজ প্যারামিটার আর্গুমেন্ট আকারে পাস করতে চাইলে ES6 স্ট্যান্ডার্ডে "...params" ব্যবহার করতে হবে। ...params হবে আর্গুমেন্টের **শেষ** প্যারামিটার। এটি একটি ES6 ফিচার এবং এই ফিচারকে spread operator বলে।
+
+নিচের ফাংশনের Output এ 2, 4, 1 আসার কারণ হল প্রথমবার যখন dummy ফাংশনটা কল করা হয়েছে তখন a ও b এর মান হিসাবে 1 ও 4 অ্যাসাইন হয়েছে। পরবর্তী দু'টা সংখ্যা 4 ও 10 প্যারামিটার দু'টি ...params এর মান হিসাবে ব্যবহৃত হয়েছে।
+
+```js
+function dummy(a,b, ...params) {
+    console.log(params.length);
+    console.log(params);
+}
+dummy(1,4,8,10);
+dummy(1,4,6,10,12,13);
+dummy(1,3,5);
+
+/*
+Output:
+2
+[ 8, 10 ]
+4
+[ 6, 10, 12, 13 ]
+1
+[ 5 ]
+*/
+```
+
+**রিয়েল ওয়ার্ল্ড প্রবলেম**
+
+```js
+function addStudents(storage, ...people) {
+    for(var i = 0; i < people.length; i++) {
+        storage.push(people[i]);
+    }
+}
+
+var students = [];
+addStudents(students, "Mr. One", "Mr. Two", "Mr. Three");
+console.log(students.length);
+addStudents(students, "Mr. Four", "Mr. Eight");
+console.log(students.length);
+addStudents(students, "Mr. Eleven");
+console.log(students.length);
+
+/*
+3
+5
+6
+*/
+```
+
+লক্ষ্যনীয় যে, ...params এর ভ্যালুগুলো ফাংশনের মধ্যে **array** আকারে পাওয়া যায়।
